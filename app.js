@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
@@ -5,18 +6,41 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const cookieParser = require('cookie-parser');
 
 const globalErrorHandler = require('./controller/errorController');
 const AppError = require('./utils/appError');
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
+const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
 
 // GLOBAL MIDDLEWARES
+
+// Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Set security HTTP headers
-app.use(helmet());
+// app.use(helmet());
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       scriptSrc: ["'self'", "unpkg.com"],
+//       imgSrc: ["'self'", "data:", "unpkg.com","cdnjs.cloudflare.com"],
+//     },
+//   })
+// );
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false,
+  }),
+);
 
 // Development Logging
 // console.log(process.env.NODE_ENV);
@@ -34,6 +58,9 @@ app.use('/api', limiter);
 
 // Body parser, reading from body into req.body
 app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+// Parsing data from cookie
+app.use(cookieParser());
 
 // Data Sanitization against NoSQL query injection
 app.use(mongoSanitize());
@@ -55,9 +82,6 @@ app.use(
   }),
 );
 
-// Serving static files
-app.use(express.static(`${__dirname}/public`));
-
 // below mentioned middleware is applied to each single route
 // app.use((req, res, next) => {
 //   console.log('Hello from the middleware 👋');
@@ -68,10 +92,17 @@ app.use(express.static(`${__dirname}/public`));
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   // console.log(x);
+  // console.log('req.cookies: ' + JSON.stringify(req.cookies)); // on reloading any page, we'll see cookie in console
   next();
 });
 
 // Routes : middlewares mount upon paths
+
+// app.get('/',(req,res)=>{
+//   res.status(200).render('base')
+// })
+
+app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);

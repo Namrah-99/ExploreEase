@@ -33,8 +33,8 @@ const reviews = JSON.parse(
 const importData = async () => {
   try {
     const toursWithoutId = tours.map(({ id, ...rest }) => rest);
-    await Tour.create(toursWithoutId);
     await User.create(users, { validateBeforeSave: false });
+    await Tour.create(toursWithoutId);
     await Review.create(reviews);
     console.log('Data successfully loaded!');
   } catch (error) {

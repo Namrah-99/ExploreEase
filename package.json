@@ -4,7 +4,8 @@
   "description": "learning express, node and mongoDB",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon --inspect server.js",
+    "start": "node --inspect server.js",
+    "dev": "nodemon --inspect server.js",
     "start:prod": "cross-env NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "watch:server": "nodemon --inspect server.js",

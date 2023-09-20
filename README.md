@@ -10,25 +10,25 @@ My project's primary goal is to make exploration easier, more interactive, and m
 
 ExploreEase boasts a diverse set of features to cater to a wide range of users:
 
-- **Interactive Maps:** We've integrated the powerful Leaflet library to provide interactive maps that allow users to explore places with ease. Users can choose from various map styles and overlay options to customize their experience.
+- **Interactive Maps:** I've integrated the powerful Leaflet library to provide interactive maps that allow users to explore places with ease. Users can choose from various map styles and overlay options to customize their experience.
 
-- **User Authentication:** We've implemented a robust login system that ensures user data security. Users can create accounts, log in, and access personalized features.
+- **User Authentication:** I've implemented a robust login system that ensures user data security. Users can create accounts, log in, and access personalized features.
 
 - **Image Upload and Processing:** ExploreEase enables users to upload images, which are efficiently processed to ensure fast loading times and optimal viewing.
 
 - **Email Notifications:** Users receive email notifications for various events, including account creation, password resets, and booking confirmations, improving overall user engagement.
 
-- **Payment Processing:** Our integration with Stripe enables secure and convenient credit card payments for booking tours and other services.
+- **Payment Processing:** Integration with Stripe enables secure and convenient credit card payments for booking tours and other services.
 
 - **User Profile:** Users can update their profiles, including personal information, photos, and password changes, all within the app.
 
 - **Tour Bookings:** ExploreEase provides users with the ability to book tours. Bookings are securely processed, and users can view their booked tours in their profile.
 
-- **Email Templates:** We've created responsive email templates using Pug and SendGrid to deliver professional and visually appealing email notifications.
+- **Email Templates:** I've created responsive email templates using Pug and SendGrid to deliver professional and visually appealing email notifications.
 
 - **Advanced Map Features:** ExploreEase offers advanced map features like custom tile layers, tile layer providers, and geosystems for GeoJSON files.
 
-- **Security Best Practices:** Our project prioritizes security, employing password encryption, protection against brute force attacks, and thorough validation to prevent common web vulnerabilities.
+- **Security Best Practices:** My project prioritizes security, employing password encryption, protection against brute force attacks, and thorough validation to prevent common web vulnerabilities.
 
 
 ## Tech Stack

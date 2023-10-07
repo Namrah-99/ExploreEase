@@ -133,8 +133,9 @@ or
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
+![App All Tours page image](/public/img/readmefileImages/a.png)
+![Tour Details page image](/public/img/readmefileImages/b.png)
+![User Settings page image](/public/img/readmefileImages/c.png)
 
 ## Contributing
 

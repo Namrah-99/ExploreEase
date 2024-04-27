@@ -1,16 +1,17 @@
 ## Dependencies Used:
 
-- **@babel/polyfill:** Provides polyfills for a full ES2015+ environment, allowing you to use features like async/await.
+- **express:** A fast, unopinionated, minimalist web framework for Node.js, providing a robust set of features for web and mobile applications.
 - **axios:** A promise-based HTTP client for the browser and Node.js, making it easy to send asynchronous HTTP requests.
 - **bcrypt:** A library for hashing passwords, providing a secure way to store passwords in your database.
 - **compression:** Middleware for Express to compress HTTP responses, reducing the size of data sent over the network.
 - **cookie-parser:** Middleware for Express to parse cookies in incoming HTTP requests.
+- **validator:** A library for validating and sanitizing strings, useful for validating user input.
 - **dotenv:** Loads environment variables from a .env file into process.env, making it easy to manage configuration in your development environment.
-- **express:** A fast, unopinionated, minimalist web framework for Node.js, providing a robust set of features for web and mobile applications.
 - **express-mongo-sanitize:** Middleware for Express to sanitize user-supplied data to prevent MongoDB Operator Injection.
 - **express-rate-limit:** Middleware for Express to limit repeated requests to public APIs and/or endpoints.
 - **helmet:** Middleware for Express to set various HTTP headers to secure your application against common security vulnerabilities.
 - **hpp:** Middleware for Express to protect against HTTP Parameter Pollution attacks by whitelisting parameters.
+- **xss-clean:** Middleware for Express to sanitize user input to prevent cross-site scripting (XSS) attacks.
 - **html-to-text:** Converts HTML content to plain text, useful for extracting text from HTML emails or web pages.
 - **jsonwebtoken:** Implements JSON Web Tokens (JWT) for authentication, providing a secure way to transmit information between parties.
 - **mongoose:** A MongoDB object modeling tool designed to work in an asynchronous environment, providing a straight-forward, schema-based solution to model your application data.
@@ -23,8 +24,7 @@
 - **sharp:** A high-performance image processing library for Node.js, used for resizing and manipulating images.
 - **slugify:** A library to convert strings into URL-friendly slugs, useful for creating SEO-friendly URLs.
 - **stripe:** A library for interacting with the Stripe API, enabling you to process payments in your application.
-- **validator:** A library for validating and sanitizing strings, useful for validating user input.
-- **xss-clean:** Middleware for Express to sanitize user input to prevent cross-site scripting (XSS) attacks.
+- **@babel/polyfill:** Provides polyfills for a full ES2015+ environment, allowing you to use features like async/await.
 
 ## Dev Dependencies:
 
